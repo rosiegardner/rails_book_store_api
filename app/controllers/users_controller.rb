@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  # before_action :admin_user,     only: [:destroy]
+
   def new
     @user = User.new
   end
@@ -15,6 +17,11 @@ class UsersController < ApplicationController
       redirect_to '/signup'
     end
   end
+
+  # def admin_user
+  #   redirect_to(root_url) unless current_user && current_user.admin?
+  # end
+
 
   private
 
